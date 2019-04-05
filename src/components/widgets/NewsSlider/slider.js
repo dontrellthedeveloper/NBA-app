@@ -8,7 +8,7 @@ class NewsSlider extends Component {
 
     state = {
         news: []
-    }
+    };
 
     componentWillMount() {
         axios.get(`http://localhost:3004/articles?_start=0&_end=3`)
@@ -21,7 +21,7 @@ class NewsSlider extends Component {
 
     render() {
         return(
-            <SliderTemplates data={this.state.news}/>
+            <SliderTemplates data={this.state.news} type="featured"/>
         )
     }
 
