@@ -7,12 +7,13 @@ import styles from './slider.module.css';
 const SliderTemplates = (props) => {
     let template = null;
     const settings = {
-        dots: true,git
+        dots: true,
         infinite: true,
         arrows: false,
         speed: 500,
         slidesToShow: 1,
-        slidesToScroll:1
+        slidesToScroll:1,
+        ...props.settings
     };
 
     switch(props.type) {
