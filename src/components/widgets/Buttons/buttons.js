@@ -1,12 +1,13 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import { Link} from 'react-router-dom';
 
-import styles from './buttons.module.css';
+import styles from './buttons.css';
+
 
 const buttons = (props) => {
     let template = null;
-    
-    switch (props.type) {
+
+    switch(props.type){
         case 'loadmore':
             template = (
                 <div className={styles.blue_btn}
@@ -16,10 +17,18 @@ const buttons = (props) => {
                 </div>
             );
             break;
+        case 'linkTo':
+            template = (
+                <Link to={props.linkTo}
+                    className={styles.blue_btn}>
+                    {props.cta}
+                </Link>
+            )
+            break;
         default:
             template = null
     }
     return template;
-};
+}
 
 export default buttons;
